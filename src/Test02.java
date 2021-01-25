@@ -1,4 +1,3 @@
-import com.sun.media.jfxmediaimpl.HostUtils;
 
 import java.util.Scanner;
 
@@ -15,6 +14,11 @@ public class Test02 {
         Scanner s = new Scanner(System.in);
         System.out.println("请输入用户名：");
         String userName = s.next();
-
+        if(userName==null){
+            System.out.println("用户名不能为空");
+        }else if(userName.length()>=20){
+            System.out.println("用户名必须在20个字以内");
+        }
+        System.out.println(userName);
     }
 }
