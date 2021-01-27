@@ -20,15 +20,19 @@ public class Test01 {
     public static void main(String[] args) throws IOException {
         Scanner s = new Scanner(System.in);
         System.out.println("请输入一个文件名：");
-        String fileName = s.nextLine();
-        File f = new File(fileName);
-        if (f.exists()) {
-            System.out.println("文件名已存在！请重新输入:");
-        } else {
-            f.createNewFile();
-            System.out.println("文件创建成功！");
-            System.out.println(f.getName());
-        }
+        boolean b = true;
+        do {
+            String fileName = s.nextLine();
+            File f = new File("./" + fileName);
+            if (f.exists()) {
+                System.out.println("文件名已存在！请重新输入:");
+            } else {
+                f.createNewFile();
+                System.out.println("文件创建成功！");
+                System.out.println(f.getName());
+                b = false;
+            }
+        } while (b);
     }
 }
 
